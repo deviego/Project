@@ -9,8 +9,7 @@ export function Home() {
       <button type="Button">Adicionar</button>
     </div>
     
-  )
-  
+  )  
 }
 
 
