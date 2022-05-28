@@ -1,5 +1,36 @@
-#Home{
+.container{
+    margin-top: 40px ;
     display: flex;
     align-items: center;
     flex-direction: column;    
+}
+.container h1{
+    margin-bottom:10px;
+
+}
+.container input{
+    width: 50%;
+    margin-bottom:16px;
+
+    padding: 12px;
+    background-color: rgb(216, 209, 209); 
+    border: none;
+    border-radius: 5px;
+}
+.container button{
+    margin-bottom: 16px;
+    color:aliceblue;
+    width: 30%;
+    padding: 12px;
+
+    background-color: rgb(21, 180, 111);
+
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  
+}
+.container button:hover{
+    background-color: rgb(16, 110, 69);
+
 }
