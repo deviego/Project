@@ -24,8 +24,9 @@ export function Home() {
   }, [])
 
   return (
+
     <div className="container">
-      <header> <h1>Ponto do funcionário</h1>
+      <header> <h1>Ponto dos funcionários</h1>
         <div className="user">
           <strong> Deviego</strong>
           <img src="./src/images/a.jpg" alt="imagem de perfil de usuario" />
@@ -33,10 +34,13 @@ export function Home() {
         </div>
       </header>
      
-
+      <div className="text">
+        <p> melhore a gestão de funcionários na palma da sua mão
+        <p>marque os horarios de cada funcionários com mais rápidez.</p>  </p>
+      </div>
       <input
         type="text"
-        placeholder="Digite um nome"
+        placeholder="Digite o nome do funcionário"
         onChange={(e) => setOfficialName(e.target.value)}
       />
       <button type="Button"
