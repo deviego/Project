@@ -1,24 +1,47 @@
-import { Card } from '../../components/card'
-import './style.css' 
+import React, { useState } from "react";
+import { Card } from "../../components/card";
+import "./style.css";
 
 export function Home() {
-  let officialName = '';
-  function handleNameChange(name){
-    officialName = name;
+  const [officialName, setOfficialName] = useState();
+  const [officials, setOfficials] = useState([])
+  function handleAddOfficial(){
+    const newOfficial = {
+      name:officialName,
+      time:new Date().toLocaleString("pt-br", {
+        hour:'2-digit',
+        minute:'2-digit',
+        second:'2-digit',
+      })
+    };
+
+    setOfficials(prevState => [...prevState, newOfficial])
   }
+
   return (
-    <div className='container'>
-    <h1>Ponto do funcionário</h1>
-    <h1>{officialName}</h1>
-      <input type="text" placeholder="Digite um nome" onChange={e => handleNameChange(e.target.value)} />
-      <button type="Button">Adicionar</button>
+    <div className="container">
+      <h1>Ponto do funcionário</h1>
 
-      <Card name='Rodrigo' time='10:45:16'></Card> 
-      <Card name='Paulo' time='11:00:10'></Card> 
-      <Card name='Diego' time='12:23:12'></Card> 
+      <input
+        type="text"
+        placeholder="Digite um nome"
+        onChange={(e) => setOfficialName(e.target.value)}
+      />
+      <button type="Button"
+      onClick={handleAddOfficial}
+      >Adicionar</button>
+      {
+       officials.map(official =>(
+       <Card
+       key={official.time}
+        name={official.name}
+       time={official.time}>
+
+       </Card>))
+       
+       }
+     
+      
     </div>
-    
-  )  
+  );
 }
-
-
