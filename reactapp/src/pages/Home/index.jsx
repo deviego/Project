@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "../../components/card";
 import "./style.css";
 
 export function Home() {
   const [officialName, setOfficialName] = useState();
   const [officials, setOfficials] = useState([])
+  const [user, setUser] = useState({name:'', avatar:''})
   function handleAddOfficial(){
     const newOfficial = {
       name:officialName,
@@ -18,9 +19,20 @@ export function Home() {
     setOfficials(prevState => [...prevState, newOfficial])
   }
 
+  useEffect(() => {
+
+  }, [])
+
   return (
     <div className="container">
-      <h1>Ponto do funcionário</h1>
+      <header> <h1>Ponto do funcionário</h1>
+        <div className="user">
+          <strong> Deviego</strong>
+          <img src="./src/images/a.jpg" alt="imagem de perfil de usuario" />
+          
+        </div>
+      </header>
+     
 
       <input
         type="text"
